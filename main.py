@@ -10,7 +10,7 @@ import urllib
 import sys
 from datetime import datetime, timedelta
 
-TOKEN = 'xoxp-292869156659-292869631123-511488493652-cf2461cbbe7ab4785df5a325cf2c3287'
+TOKEN = ''
 DAYS = 0 
 
 date = str(calendar.timegm((datetime.now() + timedelta(- DAYS)).utctimetuple()))
