@@ -10,23 +10,12 @@ import urllib
 import sys
 from datetime import datetime, timedelta
 
-TOKEN = [
-    'xoxp-292869156659-292426721345-446257000198-0aa04c47ba3961942619986e60ea5cd8',
-    'xoxp-292869156659-292441275313-511484273652-4a07ae6d487eda3e93c8a6158c46e1cb',
-]
-DAYS = 0 
-
-date = str(calendar.timegm((datetime.now() + timedelta(- DAYS)).utctimetuple()))
-
-params = {"token": TOKEN, "ts_to": date}
-data = urllib.urlencode(params)
+TOKEN = 'xoxp-292869156659-292426721345-512707621991-6447f58d0d0a92f54424dbddacbc0c7f'
 
 h = httplib2.Http()
-
 (response, content) = h.request(
-    'https://slack.com/api/files.list',
-    "POST",
-    body=data,
+    'https://slack.com/api/files.list?token={}'.format(TOKEN),
+    "GET",
     headers={'Content-type': 'application/x-www-form-urlencoded'})
 
 def check_error(error_message, answer, error_code = 1):
