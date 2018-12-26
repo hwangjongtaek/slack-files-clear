@@ -10,8 +10,11 @@ import urllib
 import sys
 from datetime import datetime, timedelta
 
-TOKEN = input('Enter your slack token (If you dont know, check https://api.slack.com/custom-integrations/legacy-tokens):')
-DAYS = input('Please enter days that you want to delete: ')
+TOKEN = [
+    'xoxp-292869156659-292426721345-446257000198-0aa04c47ba3961942619986e60ea5cd8',
+    'xoxp-292869156659-292441275313-511484273652-4a07ae6d487eda3e93c8a6158c46e1cb',
+]
+DAYS = 0 
 
 date = str(calendar.timegm((datetime.now() + timedelta(- DAYS)).utctimetuple()))
 
